@@ -1,5 +1,7 @@
 # aspnetoaproject
 
+FineUI MVC 基础版
+
 ASP.NET MVC5,
 
 EF6 连接两个不同数据库,
