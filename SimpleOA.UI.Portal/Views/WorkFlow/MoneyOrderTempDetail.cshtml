@@ -1,0 +1,31 @@
+﻿@model SimpleOA.Model.OAModel.CommonWFTemp
+
+@{
+    ViewBag.Title = "GridOther/NewTab/Window";
+    var F = Html.F();
+
+}
+
+
+@section body {
+
+
+
+    @(F.Form().ID("SimpleForm1").ShowBorder(false).ShowHeader(false).AutoScroll(true).BodyPadding(10).IsViewPort(true)
+                .Rows(
+                    F.FormRow()
+                        .Items(
+                            F.NumberBox().ID("ID").Hidden(true).Text(Convert.ToString(ViewBag.User.ID)),
+                            F.NumberBox().ID("FID").Hidden(true).Text(Convert.ToString(ViewBag.FormTemp)),
+                            F.TextBox().ID("UName").Enabled(false).Text(ViewBag.User.UName)),
+                    F.FormRow()
+                        .Items(
+                            F.NumberBox().ID("MaxValue").NoDecimal(true).NoNegative(true).Label("MaxValue").Required(true).ShowRedStar(true),
+                            F.NumberBox().ID("SetUpValue").Text(Convert.ToString(ViewBag.MaxValue)).NoDecimal(true).Enabled(false).NoNegative(true).Label("限定")))
+                .Toolbars(
+                    F.Toolbar().ID("Toolbar1").ToolbarAlign(ToolbarAlign.Right).Position(ToolbarPosition.Bottom)
+                        .Items(
+                            F.Button().ID("Button1").Text("发送").IconFont(IconFont._Send).ValidateForms("SimpleForm1").OnClick(Url.Action("/WorkFlow/Add"), "SimpleForm1")))
+    )
+
+}

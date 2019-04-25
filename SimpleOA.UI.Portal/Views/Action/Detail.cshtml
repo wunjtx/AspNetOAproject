@@ -1,0 +1,64 @@
+﻿
+@{
+    var F = Html.F();
+
+}
+@section body{
+
+    @(F.Form()
+    .BodyPadding(10)
+    .AutoScroll(true)
+    .ShowHeader(false)
+    .ShowBorder(false)
+    .ID("SimpleForm1")
+    .IsViewPort(true)
+    .Toolbars(
+    F.Toolbar()
+        .Items(
+            F.ToolbarFill(),
+            F.ToolbarText().Text("提示一").ID("ToolbarText1"),
+            F.ToolbarSeparator(),
+            F.ToolbarText().Text("提示二").ID("ToolbarText2") ))
+        .Rows(
+        F.FormRow()
+            .Items(
+                F.TextBox().CssClass("highlight").Hidden(true).Text(ViewBag.Id).Label("Id").ID("Id"),
+                F.TextBox().CssClass("highlight").Text(ViewBag.tm.Controller).Label("分类").ID("Controller"),
+                F.TextBox().CssClass("highlight").Text(ViewBag.tm.Action).Label("分类").ID("Action"),
+                F.TextBox().CssClass("highlight").Text(ViewBag.tm.Name).Label("Name").ID("Name")),
+        F.FormRow()
+            .Items(
+                F.TextBox().CssClass("highlight").Text(ViewBag.tm.MenuName).Label("MenuName").ID("MenuName"),
+                F.TextBox().CssClass("highlight").Text(ViewBag.tm.Remark).Label("Remark").ID("Remark"),
+                F.TextBox().CssClass("highlight").Text(ViewBag.tm.Url).Label("Url").ID("Url")),
+        F.FormRow()
+            .Items(
+                F.CheckBoxList().ID("RoleList").Label("角色").ColumnNumber(3).DataTextField("RoleName").DataValueField("ID").DataSource(ViewBag.RoleListDataSource).SelectedValueArray(ViewBag.RoleListSelectedValueArray)),
+        F.FormRow()
+            .Items(
+                F.Button().ID("btnSubmit").OnClick(Url.Action("btnSaveHideRefresh_Click"), "SimpleForm1", new Parameter("RoleList", "getCheckBoxListSelected('RoleList')")).ValidateForms("SimpleForm1").Text("提交")
+            ))
+    )
+}
+@section script {
+    <script>
+
+        function getCheckBoxListSelected(cbxListID) {
+            //return F.ui[cbxListID].getValue();
+            var list = F.ui[cbxListID];
+            var result = [];
+            $.each(list.items, function (index, item) {
+                if (item.isChecked()) {
+                    //result.push({
+                    //    'label': item.getInputLabel(),
+                    //    'value': item.getInputValue()
+                    //});
+                    result.push(item.getInputValue());
+                }
+            });
+            return F.toJSON(result);
+        }
+
+
+    </script>
+}

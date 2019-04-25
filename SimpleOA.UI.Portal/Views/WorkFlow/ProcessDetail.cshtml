@@ -1,0 +1,40 @@
+﻿@model SimpleOA.Model.OAModel.CommonWFTemp
+
+@{
+    ViewBag.Title = "GridOther/NewTab/Window";
+    var F = Html.F();
+
+}
+
+
+@section body {
+
+
+
+    @(F.Form().ID("SimpleForm1").ShowBorder(false).ShowHeader(false).AutoScroll(true).BodyPadding(10).IsViewPort(true)
+        .Rows(
+            F.FormRow()
+                .Items(
+                    F.TextBox().ID("stepId").Hidden(true).Text(Convert.ToString(ViewBag.WfStep.Id)),
+                    F.TextBox().ID("insId").Hidden(true).Text(Convert.ToString(ViewBag.WfInstance.Id)),
+                    F.TextBox().ID("StepName").Enabled(false).Text(ViewBag.WfStep.StepName)),
+            F.FormRow()
+                .Items(
+                    F.TextBox().ID("MaxValue").Enabled(false).Label("MaxValue").Required(true).ShowRedStar(true).Text(Convert.ToString(ViewBag.WfInstance.MaxValue)),
+                    //忘了在数据库加一个setupvalue字段，暂时写成固定的值
+                    F.NumberBox().ID("SetUpValue").Text("100").NoDecimal(true).Enabled(false).NoNegative(true).Label("限定")),
+             F.FormRow()
+                .Items(
+                    F.TextArea().ID("ProcessResult").Height(80).Label("描述").Required(true).ShowRedStar(true) ),
+             F.FormRow()
+                .Items(
+                    F.RadioButton().ID("Pass").Label("处理意见").Checked(true).GroupName("Result").Text("拒绝"),
+                    F.RadioButton().ID("Deny").GroupName("Result").ShowEmptyLabel(true).Text("通过"))
+            )
+        .Toolbars(
+            F.Toolbar().ID("Toolbar1").ToolbarAlign(ToolbarAlign.Right).Position(ToolbarPosition.Bottom)
+                .Items(
+                    F.Button().ID("Button1").Text("发送").IconFont(IconFont._Send).ValidateForms("SimpleForm1").OnClick(Url.Action("/PassCheck"), "SimpleForm1")))
+    )
+
+}

@@ -1,0 +1,2 @@
+obj\Debug\FinancialActivity.g.xaml
+obj\Debug\ActivityLibraryFinancial_Activity1_BeforeInitializeComponentHelper.txt

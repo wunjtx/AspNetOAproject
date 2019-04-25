@@ -1,0 +1,12 @@
+F:\dotNetProject\SimpleOA\SimpleOA.IDAL\bin\Debug\SimpleOA.IDAL.dll
+F:\dotNetProject\SimpleOA\SimpleOA.IDAL\bin\Debug\SimpleOA.IDAL.pdb
+F:\dotNetProject\SimpleOA\SimpleOA.IDAL\bin\Debug\SimpleOA.Model.dll
+F:\dotNetProject\SimpleOA\SimpleOA.IDAL\bin\Debug\EntityFramework.dll
+F:\dotNetProject\SimpleOA\SimpleOA.IDAL\bin\Debug\SimpleOA.Model.pdb
+F:\dotNetProject\SimpleOA\SimpleOA.IDAL\bin\Debug\SimpleOA.Model.dll.config
+F:\dotNetProject\SimpleOA\SimpleOA.IDAL\bin\Debug\EntityFramework.xml
+F:\dotNetProject\SimpleOA\SimpleOA.IDAL\obj\Debug\SimpleOA.IDAL.csprojAssemblyReference.cache
+F:\dotNetProject\SimpleOA\SimpleOA.IDAL\obj\Debug\SimpleOA.IDAL.csproj.CoreCompileInputs.cache
+F:\dotNetProject\SimpleOA\SimpleOA.IDAL\obj\Debug\SimpleOA.IDAL.csproj.CopyComplete
+F:\dotNetProject\SimpleOA\SimpleOA.IDAL\obj\Debug\SimpleOA.IDAL.dll
+F:\dotNetProject\SimpleOA\SimpleOA.IDAL\obj\Debug\SimpleOA.IDAL.pdb

@@ -1,0 +1,5 @@
+F:\Workspaces\Workspace1\SimpleOA\Enum\bin\Debug\SimpleOA.Enum.dll
+F:\Workspaces\Workspace1\SimpleOA\Enum\bin\Debug\SimpleOA.Enum.pdb
+F:\Workspaces\Workspace1\SimpleOA\Enum\obj\Debug\SimpleOA.Enum.csproj.CoreCompileInputs.cache
+F:\Workspaces\Workspace1\SimpleOA\Enum\obj\Debug\SimpleOA.Enum.dll
+F:\Workspaces\Workspace1\SimpleOA\Enum\obj\Debug\SimpleOA.Enum.pdb

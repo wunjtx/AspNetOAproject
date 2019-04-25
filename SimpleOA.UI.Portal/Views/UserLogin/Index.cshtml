@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Form/TextBox";
+    var F = Html.F();
+}
+
+@section head {
+
+    <style>
+        a {
+            display: block;
+            text-align: center;
+        }
+    </style>
+
+}
+
+@section body {
+
+    <div>
+        user：admin
+        <br>
+        password：admin
+        <br>
+        <br>
+    </div>
+
+    @(F.Window().Layout(LayoutType.HBox).Width(400).WindowPosition(WindowPosition.GoldenSection).IconFont(IconFont._SignIn).EnableClose(false).IsModal(false).Title("User Login").ID("Window1")
+        .Items(
+            F.SimpleForm().ShowHeader(false).BodyPadding(10).ShowBorder(false).ID("SimpleForm1")
+                .Items(
+                    F.TextBox().NextFocusControl("txtPwd").ShowRedStar(true).Required(true).Label("Name").ID("txtName"),
+                    F.TextBox().NextFocusControl("txtCaptcha").ShowRedStar(true).Required(true).TextMode(TextMode.Password).Label("Password").ID("txtPwd"),
+                    F.Panel().BoxConfigAlign(BoxLayoutAlign.Stretch).Layout(LayoutType.HBox).ShowHeader(false).ShowBorder(false)
+                    .Items(
+                        F.TextBox().NextFocusControl("btnLogin").Required(true).Label("Code").Margin("0 5 0 0").BoxFlex(1).ID("txtCaptcha"),
+                        F.LinkButton().OnClick(Url.Action("imgCaptcha_Click")).EncodeText(false).Width(100).CssClass("imgcaptcha").Margin("0 5 0 0").ID("imgCaptcha").Text(ViewBag.ImgCaptchaText)),
+                        F.Panel().BoxConfigAlign(BoxLayoutAlign.Stretch).Layout(LayoutType.HBox).Height(32).BodyPadding("5 0 0 0").ShowHeader(false).ShowBorder(false)
+                        .Items(
+                            F.CheckBox().ID("rememberMe").ShowLabel(false).MarginLeft(250),
+                            F.Label().Text("Remember Me")
+                        )
+                    )
+                )
+        .Toolbars(
+            F.Toolbar().Position(ToolbarPosition.Bottom).ToolbarAlign(ToolbarAlign.Right).ID("Toolbar1")
+                .Items(
+                    //F.CheckBoxList().MarginRight(140).ID("rememberMe").ShowLabel(false)
+                    //.Items(F.CheckItem().Text("Remember Me").Value("rememberme")),
+                    F.Button().OnClick(Url.Action("btnLogin_Click"), "SimpleForm1").ValidateTarget(Target.Top).ValidateForms("SimpleForm1").Type(ButtonType.Button).Text("Login").ID("btnLogin"),
+                    F.Button().Type(ButtonType.Reset).Text("Reset").ID("btnReset")
+                )
+        )
+    )
+
+
+}
+

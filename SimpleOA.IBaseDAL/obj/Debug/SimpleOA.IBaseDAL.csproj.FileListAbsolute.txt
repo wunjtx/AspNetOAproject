@@ -1,0 +1,12 @@
+F:\dotNetProject\SimpleOA\SimpleOA.IBaseDAL\bin\Debug\SimpleOA.IBaseDAL.dll
+F:\dotNetProject\SimpleOA\SimpleOA.IBaseDAL\bin\Debug\SimpleOA.IBaseDAL.pdb
+F:\dotNetProject\SimpleOA\SimpleOA.IBaseDAL\obj\Debug\SimpleOA.IBaseDAL.csproj.CoreCompileInputs.cache
+F:\dotNetProject\SimpleOA\SimpleOA.IBaseDAL\obj\Debug\SimpleOA.IBaseDAL.dll
+F:\dotNetProject\SimpleOA\SimpleOA.IBaseDAL\obj\Debug\SimpleOA.IBaseDAL.pdb
+F:\dotNetProject\SimpleOA\SimpleOA.IBaseDAL\obj\Debug\SimpleOA.IBaseDAL.csprojAssemblyReference.cache
+F:\Workspaces\Workspace1\SimpleOA\SimpleOA.IBaseDAL\bin\Debug\SimpleOA.IBaseDAL.dll
+F:\Workspaces\Workspace1\SimpleOA\SimpleOA.IBaseDAL\bin\Debug\SimpleOA.IBaseDAL.pdb
+F:\Workspaces\Workspace1\SimpleOA\SimpleOA.IBaseDAL\obj\Debug\SimpleOA.IBaseDAL.csproj.CoreCompileInputs.cache
+F:\Workspaces\Workspace1\SimpleOA\SimpleOA.IBaseDAL\obj\Debug\SimpleOA.IBaseDAL.dll
+F:\Workspaces\Workspace1\SimpleOA\SimpleOA.IBaseDAL\obj\Debug\SimpleOA.IBaseDAL.pdb
+F:\Workspaces\Workspace1\SimpleOA\SimpleOA.IBaseDAL\obj\Debug\SimpleOA.IBaseDAL.csprojAssemblyReference.cache

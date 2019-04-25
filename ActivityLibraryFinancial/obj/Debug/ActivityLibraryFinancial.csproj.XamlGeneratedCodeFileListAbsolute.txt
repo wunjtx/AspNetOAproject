@@ -1,0 +1,4 @@
+obj\Debug\_ActivityLibraryFinancial.g.cs
+obj\Debug\FinancialActivity.g.cs
+obj\Debug\ActivityLibraryFinancial_Activity1_BeforeInitializeComponentHelper.cs
+F:\Workspaces\Workspace1\SimpleOA\ActivityLibraryFinancial\obj\Debug\ActivityLibraryFinancial_Activity1_CompiledExpressionRoot.cs

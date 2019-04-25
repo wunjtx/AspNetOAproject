@@ -1,0 +1,206 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28306.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataAccess", "DataAccess", "{07DA6A05-60DF-4AC0-BC30-FE2627D41F17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleOA.Model", "SimpleOA.Model\SimpleOA.Model.csproj", "{7BA6D03B-5DA7-466B-AAFD-F30103352238}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleOA.OADAL", "SimpleOA.EFDAL\SimpleOA.OADAL.csproj", "{F26EB706-CC00-4626-9DEF-95F195C43643}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleOA.BLL", "SimpleOA.BLL\SimpleOA.BLL.csproj", "{325EFAB3-81A4-4490-8FE2-DA4AE3DF62B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Util", "Util", "{5A3C1863-16E6-45ED-BB5E-C0DA7CB7C522}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleOA.Common", "SimpleOA.Common\SimpleOA.Common.csproj", "{C105BE23-7E5B-4DCC-9169-FBA2B4528ADC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{22DB02D5-F7FD-421C-B8CF-37B83C8EE85B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleOA.UI.Portal", "SimpleOA.UI.Portal\SimpleOA.UI.Portal.csproj", "{B70DA1BE-0374-4C6D-9858-5D2BA4918885}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{5CF121D0-2632-481E-8ECD-AB8E954D59D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleOA.UnitTest", "SimpleOA.UnitTest\SimpleOA.UnitTest.csproj", "{F76D7697-9CB4-4D56-ADD7-D8A204D1FB4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleOA.IOADAL", "SimpleOA.IDAL\SimpleOA.IOADAL.csproj", "{2C2C88E4-BDC6-4860-B89C-6E2AF72B89DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleOA.DalFactory", "SimpleOA.DalFactory\SimpleOA.DalFactory.csproj", "{E3AA5B88-1F7A-46ED-84BB-6352DAC18ED0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleOA.ErpDal", "SimpleOA.ErpDal\SimpleOA.ErpDal.csproj", "{F128C531-B230-42FA-BD42-8072764DB773}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleOA.IErpDAL", "SimpleOA.IErpDAL\SimpleOA.IErpDAL.csproj", "{B6106968-0223-4EAE-BC69-5C7513477F12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleOA.IBaseDAL", "SimpleOA.IBaseDAL\SimpleOA.IBaseDAL.csproj", "{238DBDB9-F4BF-466F-81F5-F63B7BA72060}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleOA.IBLL", "SimpleOA.IBLL\SimpleOA.IBLL.csproj", "{8C1F1C8A-BFF4-48F1-A915-1493772E08D9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Enum", "Enum", "{82357B16-09BD-43E3-A2A9-88F47965B08E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleOA.Enum", "Enum\SimpleOA.Enum.csproj", "{C862F623-5718-431C-B52F-D1A159B8C936}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkFlow", "WorkFlow", "{506AB6F9-C135-4D04-84E1-59280BC9A39F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActivityLibraryFinancial", "ActivityLibraryFinancial\ActivityLibraryFinancial.csproj", "{BAAB94FD-8E06-4C26-ACF4-6B6301407BBF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{B7A5F2A5-5FF7-4D3F-8645-84DADE42B37B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{8C47A449-66D6-4B74-B26B-3DA52318ABEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BA6D03B-5DA7-466B-AAFD-F30103352238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BA6D03B-5DA7-466B-AAFD-F30103352238}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BA6D03B-5DA7-466B-AAFD-F30103352238}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BA6D03B-5DA7-466B-AAFD-F30103352238}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F26EB706-CC00-4626-9DEF-95F195C43643}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F26EB706-CC00-4626-9DEF-95F195C43643}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F26EB706-CC00-4626-9DEF-95F195C43643}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F26EB706-CC00-4626-9DEF-95F195C43643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{325EFAB3-81A4-4490-8FE2-DA4AE3DF62B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{325EFAB3-81A4-4490-8FE2-DA4AE3DF62B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{325EFAB3-81A4-4490-8FE2-DA4AE3DF62B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{325EFAB3-81A4-4490-8FE2-DA4AE3DF62B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C105BE23-7E5B-4DCC-9169-FBA2B4528ADC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C105BE23-7E5B-4DCC-9169-FBA2B4528ADC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C105BE23-7E5B-4DCC-9169-FBA2B4528ADC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C105BE23-7E5B-4DCC-9169-FBA2B4528ADC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B70DA1BE-0374-4C6D-9858-5D2BA4918885}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B70DA1BE-0374-4C6D-9858-5D2BA4918885}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B70DA1BE-0374-4C6D-9858-5D2BA4918885}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B70DA1BE-0374-4C6D-9858-5D2BA4918885}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F76D7697-9CB4-4D56-ADD7-D8A204D1FB4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F76D7697-9CB4-4D56-ADD7-D8A204D1FB4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F76D7697-9CB4-4D56-ADD7-D8A204D1FB4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F76D7697-9CB4-4D56-ADD7-D8A204D1FB4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C2C88E4-BDC6-4860-B89C-6E2AF72B89DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C2C88E4-BDC6-4860-B89C-6E2AF72B89DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C2C88E4-BDC6-4860-B89C-6E2AF72B89DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C2C88E4-BDC6-4860-B89C-6E2AF72B89DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3AA5B88-1F7A-46ED-84BB-6352DAC18ED0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3AA5B88-1F7A-46ED-84BB-6352DAC18ED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3AA5B88-1F7A-46ED-84BB-6352DAC18ED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3AA5B88-1F7A-46ED-84BB-6352DAC18ED0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F128C531-B230-42FA-BD42-8072764DB773}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F128C531-B230-42FA-BD42-8072764DB773}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F128C531-B230-42FA-BD42-8072764DB773}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F128C531-B230-42FA-BD42-8072764DB773}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6106968-0223-4EAE-BC69-5C7513477F12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6106968-0223-4EAE-BC69-5C7513477F12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6106968-0223-4EAE-BC69-5C7513477F12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6106968-0223-4EAE-BC69-5C7513477F12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{238DBDB9-F4BF-466F-81F5-F63B7BA72060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{238DBDB9-F4BF-466F-81F5-F63B7BA72060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{238DBDB9-F4BF-466F-81F5-F63B7BA72060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{238DBDB9-F4BF-466F-81F5-F63B7BA72060}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C1F1C8A-BFF4-48F1-A915-1493772E08D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C1F1C8A-BFF4-48F1-A915-1493772E08D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C1F1C8A-BFF4-48F1-A915-1493772E08D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C1F1C8A-BFF4-48F1-A915-1493772E08D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C862F623-5718-431C-B52F-D1A159B8C936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C862F623-5718-431C-B52F-D1A159B8C936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C862F623-5718-431C-B52F-D1A159B8C936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C862F623-5718-431C-B52F-D1A159B8C936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAAB94FD-8E06-4C26-ACF4-6B6301407BBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAAB94FD-8E06-4C26-ACF4-6B6301407BBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAAB94FD-8E06-4C26-ACF4-6B6301407BBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAAB94FD-8E06-4C26-ACF4-6B6301407BBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C47A449-66D6-4B74-B26B-3DA52318ABEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C47A449-66D6-4B74-B26B-3DA52318ABEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C47A449-66D6-4B74-B26B-3DA52318ABEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C47A449-66D6-4B74-B26B-3DA52318ABEF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7BA6D03B-5DA7-466B-AAFD-F30103352238} = {07DA6A05-60DF-4AC0-BC30-FE2627D41F17}
+		{F26EB706-CC00-4626-9DEF-95F195C43643} = {07DA6A05-60DF-4AC0-BC30-FE2627D41F17}
+		{325EFAB3-81A4-4490-8FE2-DA4AE3DF62B3} = {07DA6A05-60DF-4AC0-BC30-FE2627D41F17}
+		{C105BE23-7E5B-4DCC-9169-FBA2B4528ADC} = {5A3C1863-16E6-45ED-BB5E-C0DA7CB7C522}
+		{B70DA1BE-0374-4C6D-9858-5D2BA4918885} = {22DB02D5-F7FD-421C-B8CF-37B83C8EE85B}
+		{F76D7697-9CB4-4D56-ADD7-D8A204D1FB4C} = {5CF121D0-2632-481E-8ECD-AB8E954D59D8}
+		{2C2C88E4-BDC6-4860-B89C-6E2AF72B89DC} = {07DA6A05-60DF-4AC0-BC30-FE2627D41F17}
+		{E3AA5B88-1F7A-46ED-84BB-6352DAC18ED0} = {07DA6A05-60DF-4AC0-BC30-FE2627D41F17}
+		{F128C531-B230-42FA-BD42-8072764DB773} = {07DA6A05-60DF-4AC0-BC30-FE2627D41F17}
+		{B6106968-0223-4EAE-BC69-5C7513477F12} = {07DA6A05-60DF-4AC0-BC30-FE2627D41F17}
+		{238DBDB9-F4BF-466F-81F5-F63B7BA72060} = {07DA6A05-60DF-4AC0-BC30-FE2627D41F17}
+		{8C1F1C8A-BFF4-48F1-A915-1493772E08D9} = {07DA6A05-60DF-4AC0-BC30-FE2627D41F17}
+		{C862F623-5718-431C-B52F-D1A159B8C936} = {82357B16-09BD-43E3-A2A9-88F47965B08E}
+		{BAAB94FD-8E06-4C26-ACF4-6B6301407BBF} = {506AB6F9-C135-4D04-84E1-59280BC9A39F}
+		{8C47A449-66D6-4B74-B26B-3DA52318ABEF} = {B7A5F2A5-5FF7-4D3F-8645-84DADE42B37B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B7DB7F57-59E1-499A-B757-512196F4A341}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 16
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://desktop-6arkqk6:8081/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = SimpleOA.Common\\SimpleOA.Common.csproj
+		SccProjectTopLevelParentUniqueName1 = SimpleOA.sln
+		SccProjectName1 = SimpleOA.Common
+		SccLocalPath1 = SimpleOA.Common
+		SccProjectUniqueName2 = SimpleOA.BLL\\SimpleOA.BLL.csproj
+		SccProjectTopLevelParentUniqueName2 = SimpleOA.sln
+		SccProjectName2 = SimpleOA.BLL
+		SccLocalPath2 = SimpleOA.BLL
+		SccProjectUniqueName3 = SimpleOA.DalFactory\\SimpleOA.DalFactory.csproj
+		SccProjectTopLevelParentUniqueName3 = SimpleOA.sln
+		SccProjectName3 = SimpleOA.DalFactory
+		SccLocalPath3 = SimpleOA.DalFactory
+		SccProjectUniqueName4 = SimpleOA.ErpDal\\SimpleOA.ErpDal.csproj
+		SccProjectTopLevelParentUniqueName4 = SimpleOA.sln
+		SccProjectName4 = SimpleOA.ErpDal
+		SccLocalPath4 = SimpleOA.ErpDal
+		SccProjectUniqueName5 = SimpleOA.IBaseDAL\\SimpleOA.IBaseDAL.csproj
+		SccProjectTopLevelParentUniqueName5 = SimpleOA.sln
+		SccProjectName5 = SimpleOA.IBaseDAL
+		SccLocalPath5 = SimpleOA.IBaseDAL
+		SccProjectUniqueName6 = SimpleOA.IBLL\\SimpleOA.IBLL.csproj
+		SccProjectTopLevelParentUniqueName6 = SimpleOA.sln
+		SccProjectName6 = SimpleOA.IBLL
+		SccLocalPath6 = SimpleOA.IBLL
+		SccProjectUniqueName7 = SimpleOA.IErpDAL\\SimpleOA.IErpDAL.csproj
+		SccProjectTopLevelParentUniqueName7 = SimpleOA.sln
+		SccProjectName7 = SimpleOA.IErpDAL
+		SccLocalPath7 = SimpleOA.IErpDAL
+		SccProjectUniqueName8 = SimpleOA.IDAL\\SimpleOA.IOADAL.csproj
+		SccProjectTopLevelParentUniqueName8 = SimpleOA.sln
+		SccProjectName8 = SimpleOA.IDAL
+		SccLocalPath8 = SimpleOA.IDAL
+		SccProjectUniqueName9 = SimpleOA.Model\\SimpleOA.Model.csproj
+		SccProjectTopLevelParentUniqueName9 = SimpleOA.sln
+		SccProjectName9 = SimpleOA.Model
+		SccLocalPath9 = SimpleOA.Model
+		SccProjectUniqueName10 = SimpleOA.EFDAL\\SimpleOA.OADAL.csproj
+		SccProjectTopLevelParentUniqueName10 = SimpleOA.sln
+		SccProjectName10 = SimpleOA.EFDAL
+		SccLocalPath10 = SimpleOA.EFDAL
+		SccProjectUniqueName11 = SimpleOA.UI.Portal\\SimpleOA.UI.Portal.csproj
+		SccProjectTopLevelParentUniqueName11 = SimpleOA.sln
+		SccProjectName11 = SimpleOA.UI.Portal
+		SccLocalPath11 = SimpleOA.UI.Portal
+		SccProjectUniqueName12 = SimpleOA.UnitTest\\SimpleOA.UnitTest.csproj
+		SccProjectTopLevelParentUniqueName12 = SimpleOA.sln
+		SccProjectName12 = SimpleOA.UnitTest
+		SccLocalPath12 = SimpleOA.UnitTest
+		SccProjectUniqueName13 = Enum\\SimpleOA.Enum.csproj
+		SccProjectTopLevelParentUniqueName13 = SimpleOA.sln
+		SccProjectName13 = Enum
+		SccLocalPath13 = Enum
+		SccProjectUniqueName14 = ActivityLibraryFinancial\\ActivityLibraryFinancial.csproj
+		SccProjectTopLevelParentUniqueName14 = SimpleOA.sln
+		SccProjectName14 = ActivityLibraryFinancial
+		SccLocalPath14 = ActivityLibraryFinancial
+		SccProjectUniqueName15 = ConsoleApp1\\ConsoleApp1.csproj
+		SccProjectTopLevelParentUniqueName15 = SimpleOA.sln
+		SccProjectName15 = ConsoleApp1
+		SccLocalPath15 = ConsoleApp1
+	EndGlobalSection
+EndGlobal

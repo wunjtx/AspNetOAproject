@@ -1,0 +1,167 @@
+﻿@{
+    ViewBag.Title = "Form/TextBox";
+    var F = Html.F();
+}
+
+
+@section body{
+
+    @(F.Grid()
+                    .IsFluid(true)
+                    .CssClass("blockpanel")
+                    .EnableCheckBoxSelect(true)
+                    .ShowHeader(true)
+                    .ShowBorder(true)
+                    .Title("表格（跨页选中行）")
+                    .ID("Grid1")
+                    .DataIDField("ID")
+                    .DataTextField("UName")
+                    .AllowPaging(true)
+                    .PageSize(3)
+                    .IsDatabasePaging(true)
+                    .OnPageIndexChanged(Url.Action("Grid1_PageIndexChanged"), "Grid1", new Parameter[] { new Parameter("SearchQm", ViewBag.qm, ParameterMode.String) })
+                    .KeepCurrentSelection(true)
+                    .ClearSelectionBeforePaging(false)
+                    .KeepPagedSelection(true)
+                    .Columns(
+                        F.RowNumberField(),
+                        F.RenderField()
+                            .HeaderText("登录名")
+                            .DataField("UName")
+                            .FieldType(FieldType.String)
+                            .Width(120),
+                        F.RenderField()
+                            .HeaderText("姓名")
+                            .DataField("ShowName")
+                            .FieldType(FieldType.String)
+                            .RendererFunction("renderGender")
+                            .Width(120),
+                        F.RenderField()
+                            .HeaderText("备注")
+                            .DataField("Remark")
+                            .FieldType(FieldType.String)
+                            .Width(150),
+                        F.RenderField()
+                            .HeaderText("注册日期")
+                            .DataField("SubTime")
+                            .FieldType(FieldType.Date)
+                            .Renderer(Renderer.Date)
+                            .RendererArgument("yyyy-MM-dd")
+                            .Width(100),
+                        F.RenderField()
+                            .HeaderText("窗口列")
+                            .Width(80)
+                            .RendererFunction("renderWindowField1"))
+                    .RecordCount(ViewBag.Grid1RecordCount)
+                    .DataSource(ViewBag.Grid1DataSource)
+                    .Listener("beforepaging", "OnGrid1BeforePaging")
+    )
+    @(F.Form().IsFluid(true).CssClass("blockpanel").ID("SimpleForm1").BodyPadding("5 5 0 5").LabelAlign(LabelAlign.Left).Title("搜索")
+                   .Rows(
+                       F.FormRow().ID("FormRow5")
+                           .Items(
+                               F.TextBox().Hidden(true).Text(ViewBag.qm).ID("FormQm"),
+                               F.NumberBox().Label("ID").ID("ID").EmptyText("比如 99").NoDecimal(true).NoNegative(true),
+                               F.TextBox().ID("UName").Label("用户名")
+                           ),
+                       F.FormRow().ID("FormRow6")
+                           .Items(
+                               F.TextBox().ID("ShowName").Label("真实姓名"),
+                               F.TextBox().ID("Remark").Label("备注")
+                           ),
+                       F.FormRow().ID("FormRow7")
+                           .Items(
+                               F.DatePicker().ID("TimeAfter").Readonly(false).Label("日期大于").ShowRedStar(false),
+                               F.DatePicker().ID("TimBefore").Readonly(false).Label("日期小雨").ShowRedStar(false)
+                           ),
+                       F.FormRow().ID("FormRow8")
+                           .Items(
+                               F.Button().ID("Button1").ValidateForms("SimpleForm1").Text("搜索").OnClick(Url.Action("Button1_Click"), "SimpleForm1")
+                           )
+                   )
+    )
+}
+
+@(F.Window().Hidden(true).Height(450).Width(850).IsModal(true).OnClose(Url.Action("Window1_Close")).Target(Target.Self).EnableResize(true).EnableMaximize(true).EnableIFrame(true).Title("审批").ID("Window1"))
+
+<br>
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+    // 缓存的行数据
+    var cachedRows = {};
+
+    // 缓存当前页选中行的数据
+    function cacheCurrentPage() {
+        $.each(F.ui.Grid1.getSelectedRows(true), function (index, item) {
+            var rowId = item.id;
+            if (!cachedRows[rowId]) {
+                cachedRows[rowId] = item;
+            }
+        });
+    }
+
+    function OnGrid1BeforePaging(event, pageIndex) {
+        // 缓存当前页选中行数据
+        cacheCurrentPage();
+    }
+
+    function renderWindowField1(value, params) {
+        return '<a href="javascript:;" class="mywindowfield">编辑</a>';
+    }
+
+    // 打开窗体
+    function openWindow(id, name) {
+
+        // /Grid/IFrameWindow?id=104&name=刘国
+        var iframeWindowUrl = '@Url.Content("/User/Detail")';
+        var iframeUrl = iframeWindowUrl + '?ID=' + id + '&UName=' + encodeURIComponent(name);
+
+        // 显示窗体
+        F.ui.Window1.show(iframeUrl, '详细信息 - ' + name);
+    }
+
+
+    function onApproveClick(event) {
+        var grid = F.ui.Grid1;
+
+        if (!grid.hasSelection()) {
+            F.alert('请至少选择一项！');
+            return;
+        }
+
+        var selectedRows = grid.getSelectedRows(true);
+
+        // DataIDField
+        var selectedRowIds = $.map(selectedRows, function (item, index) {
+            return item.id;
+        }).join(',');
+
+        // DataTextField
+        var selectedRowTexts = $.map(selectedRows, function (item, index) {
+            return item.text;
+        }).join(',');
+
+        openWindow(selectedRowIds, selectedRowTexts);
+    }
+
+
+    F.ready(function () {
+
+        var grid = F.ui.Grid1;
+
+        // 点击表格行中的编辑按钮
+        grid.el.on('click', 'a.mywindowfield', function (event) {
+            var rowEl = $(this).closest('.f-grid-row');
+            var rowData = grid.getRowData(rowEl);
+
+            openWindow(rowData.id, rowData.text);
+        });
+    });
+
+    </script>
+
+}

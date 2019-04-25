@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var F = Html.F();
+}
+
+@section head {
+
+    <style>
+        .imgPhoto .f-field-label {
+            margin-top: 0;
+        }
+
+        .imgPhoto {
+            height: 150px;
+            line-height: 150px;
+            overflow: hidden;
+        }
+
+            .imgPhoto img {
+                width: 100%;
+                height: 100%;
+            }
+
+        .uploadbutton .f-btn {
+            width: 100%;
+        }
+    </style>
+
+}
+
+
+@section body {
+
+    @(F.Window().ID("Window1").Title("员工录入").IsModal(false).EnableClose(false).EnableResize(true).Height(500).Width(850).BodyPadding(10).AutoScroll(true)
+                .Items(
+                    F.Form().ID("Form1").LabelAlign(LabelAlign.Right).Height(400).MessageTarget(MessageTarget.Qtip).LabelWidth(90).ShowBorder(false).ShowHeader(false)
+                        .Items(
+                            F.Panel().ID("Panel2").ShowBorder(false).ShowHeader(false).Layout(LayoutType.HBox).BoxConfigAlign(BoxLayoutAlign.StretchMax)
+                                .Items(
+                                    F.Panel().ID("Panel1").Title("面板1").BoxFlex(5).MarginRight(5).ShowBorder(false).ShowHeader(false)
+                                        .Items(
+                                            F.TextBox().ID("UName").Label("会员登录名").ShowRedStar(true).Required(true),
+                                            F.TextBox().ID("Pwd").Label("会员密码").ShowRedStar(true).Required(true),
+                                            F.TextBox().ID("ShowName").Label("会员姓名").ShowRedStar(true).Required(true),
+                                            F.TextBox().ID("Remark").Label("会员备注").ShowRedStar(true).Required(true)),
+                                    F.Panel().ID("Panel4").BoxFlex(3).ShowBorder(false).ShowHeader(false).MarginRight(5).Layout(LayoutType.VBox)
+                                        .Items(
+                                            F.FileUpload().ID("FileUpload1").CssClass("uploadbutton").ButtonText("上传照片").ButtonOnly(true).OnFileSelected(Url.Action("filePhoto_FileSelected"), "FileUpload1"),
+                                            F.Image().ID("imgPhoto").CssClass("photo").ImageUrl(Url.Content("~/res/images/blank.png")).ShowEmptyLabel(true)
+                                        )),
+                                    F.Panel().ID("Panel3").ShowBorder(false).ShowHeader(false).Layout(LayoutType.HBox).BoxConfigAlign(BoxLayoutAlign.StretchMax).Items(
+                                        F.CheckBoxList().ID("RoleList").Label("角色").ColumnNumber(3).DataTextField("RoleName").DataValueField("ID").DataSource(ViewBag.CheckBoxList2DataSource)
+                                )
+                .Toolbars(
+                    F.Toolbar().ID("Toolbar1").ToolbarAlign(ToolbarAlign.Right).Position(ToolbarPosition.Bottom)
+                        .Items(
+                            F.Button().ID("btnSubmit").IconFont(IconFont._Save).Text("保存信息").ValidateForms("Form1").ValidateMessageBox(false).OnClick(Url.Action("btnSubmit_Click"), "Form1", new Parameter("RoleList", "getCheckBoxListSelected('RoleList')"))
+                        )
+                )
+            )))
+    <br>
+    <br>
+
+
+}
+
+@section script {
+    <script>
+
+        function getCheckBoxListSelected(cbxListID) {
+            //return F.ui[cbxListID].getValue();
+            var list = F.ui[cbxListID];
+            var result = [];
+            $.each(list.items, function (index, item) {
+                if (item.isChecked()) {
+                    //result.push({
+                    //    'label': item.getInputLabel(),
+                    //    'value': item.getInputValue()
+                    //});
+                    result.push(item.getInputValue());
+                }
+            });
+            return F.toJSON(result);
+        }
+
+
+    </script>
+}

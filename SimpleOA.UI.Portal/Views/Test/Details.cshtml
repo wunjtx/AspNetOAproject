@@ -1,0 +1,82 @@
+﻿@model SimpleOA.Model.OAModel.UserInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>UserInfo</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.UName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Pwd)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Pwd)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ShowName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ShowName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.DelFlag)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.DelFlag)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Remark)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Remark)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ModfiedOn)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ModfiedOn)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SubTime)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SubTime)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

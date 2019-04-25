@@ -1,0 +1,1091 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<local:Activity1 xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:local="clr-namespace:ActivityLibraryFinancial;assembly=ActivityLibraryFinancial" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Configuration</AssemblyReference>
+      <AssemblyReference>System.Runtime.DurableInstancing</AssemblyReference>
+      <AssemblyReference>System.Activities.DurableInstancing</AssemblyReference>
+      <AssemblyReference>SimpleOA.BLL</AssemblyReference>
+      <AssemblyReference>SimpleOA.IBLL</AssemblyReference>
+      <AssemblyReference>SimpleOA.Model</AssemblyReference>
+      <AssemblyReference>SimpleOA.Enum</AssemblyReference>
+      <AssemblyReference>SimpleOA.IOADAL</AssemblyReference>
+      <AssemblyReference>SimpleOA.DalFactory</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>ActivityLibraryFinancial</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <local:Activity1.Implementation>
+    <StateMachine>
+      <StateMachine.InitialState>
+        <State x:Name="__ReferenceID1" DisplayName="提交申请">
+          <State.Exit>
+            <Sequence>
+              <Assign>
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">
+                    <mca:CSharpReference x:TypeArguments="x:String">BookMarkName</mca:CSharpReference>
+                  </OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">提交申请</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign>
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Int16">
+                    <mca:CSharpReference x:TypeArguments="x:Int16">StepStatus</mca:CSharpReference>
+                  </OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Int16">
+                    <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WFStepEnum.Processed</mca:CSharpValue>
+                  </InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign>
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Int32">
+                    <mca:CSharpReference x:TypeArguments="x:Int32">NextProcessBy</mca:CSharpReference>
+                  </OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Int32">
+                    <mca:CSharpValue x:TypeArguments="x:Int32">StartBy</mca:CSharpValue>
+                  </InArgument>
+                </Assign.Value>
+              </Assign>
+              <local:SetStepActivity>
+                <local:SetStepActivity.InPutValue>
+                  <InArgument x:TypeArguments="x:Int32">
+                    <mca:CSharpValue x:TypeArguments="x:Int32">InputValue</mca:CSharpValue>
+                  </InArgument>
+                </local:SetStepActivity.InPutValue>
+                <local:SetStepActivity.IsEnd>
+                  <InArgument x:TypeArguments="x:Int16">
+                    <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WF_InstanceEnum.Processing</mca:CSharpValue>
+                  </InArgument>
+                </local:SetStepActivity.IsEnd>
+                <local:SetStepActivity.NextProcessBy>
+                  <InOutArgument x:TypeArguments="x:Int32">
+                    <mca:CSharpReference x:TypeArguments="x:Int32">NextProcessBy</mca:CSharpReference>
+                  </InOutArgument>
+                </local:SetStepActivity.NextProcessBy>
+                <local:SetStepActivity.StartBy>
+                  <InArgument x:TypeArguments="x:Int32">
+                    <mca:CSharpValue x:TypeArguments="x:Int32">StartBy</mca:CSharpValue>
+                  </InArgument>
+                </local:SetStepActivity.StartBy>
+                <local:SetStepActivity.StepId>
+                  <InOutArgument x:TypeArguments="x:Int32">
+                    <mca:CSharpReference x:TypeArguments="x:Int32">StepId</mca:CSharpReference>
+                  </InOutArgument>
+                </local:SetStepActivity.StepId>
+                <local:SetStepActivity.StepName>
+                  <InArgument x:TypeArguments="x:String">
+                    <mca:CSharpValue x:TypeArguments="x:String">BookMarkName</mca:CSharpValue>
+                  </InArgument>
+                </local:SetStepActivity.StepName>
+                <local:SetStepActivity.StepStatus>
+                  <InArgument x:TypeArguments="x:Int16">
+                    <mca:CSharpValue x:TypeArguments="x:Int16">StepStatus</mca:CSharpValue>
+                  </InArgument>
+                </local:SetStepActivity.StepStatus>
+                <local:SetStepActivity.TempId>
+                  <InArgument x:TypeArguments="x:Int32">
+                    <mca:CSharpValue x:TypeArguments="x:Int32">TempId</mca:CSharpValue>
+                  </InArgument>
+                </local:SetStepActivity.TempId>
+              </local:SetStepActivity>
+            </Sequence>
+          </State.Exit>
+          <State.Transitions>
+            <Transition DisplayName="输入小于等于设定值">
+              <Transition.Condition>
+                <mca:CSharpValue x:TypeArguments="x:Boolean">InputValue&lt;=SetUpValue</mca:CSharpValue>
+              </Transition.Condition>
+              <Transition.To>
+                <State x:Name="__ReferenceID3" DisplayName="项目经理审批1">
+                  <State.Entry>
+                    <Sequence>
+                      <Assign>
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">
+                            <mca:CSharpReference x:TypeArguments="x:String">BookMarkName</mca:CSharpReference>
+                          </OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">项目经理审批1</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign>
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">
+                            <mca:CSharpReference x:TypeArguments="x:Int32">NextProcessBy</mca:CSharpReference>
+                          </OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <mca:CSharpValue x:TypeArguments="x:Int32">SupervisorId</mca:CSharpValue>
+                          </InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign>
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int16">
+                            <mca:CSharpReference x:TypeArguments="x:Int16">StepStatus</mca:CSharpReference>
+                          </OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int16">
+                            <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WFStepEnum.UnProecess</mca:CSharpValue>
+                          </InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <local:SetStepActivity>
+                        <local:SetStepActivity.InPutValue>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <mca:CSharpValue x:TypeArguments="x:Int32">InputValue</mca:CSharpValue>
+                          </InArgument>
+                        </local:SetStepActivity.InPutValue>
+                        <local:SetStepActivity.IsEnd>
+                          <InArgument x:TypeArguments="x:Int16">
+                            <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WF_InstanceEnum.Processing</mca:CSharpValue>
+                          </InArgument>
+                        </local:SetStepActivity.IsEnd>
+                        <local:SetStepActivity.NextProcessBy>
+                          <InOutArgument x:TypeArguments="x:Int32">
+                            <mca:CSharpReference x:TypeArguments="x:Int32">NextProcessBy</mca:CSharpReference>
+                          </InOutArgument>
+                        </local:SetStepActivity.NextProcessBy>
+                        <local:SetStepActivity.StartBy>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <mca:CSharpValue x:TypeArguments="x:Int32">StartBy</mca:CSharpValue>
+                          </InArgument>
+                        </local:SetStepActivity.StartBy>
+                        <local:SetStepActivity.StepId>
+                          <InOutArgument x:TypeArguments="x:Int32">
+                            <mca:CSharpReference x:TypeArguments="x:Int32">StepId</mca:CSharpReference>
+                          </InOutArgument>
+                        </local:SetStepActivity.StepId>
+                        <local:SetStepActivity.StepName>
+                          <InArgument x:TypeArguments="x:String">
+                            <mca:CSharpValue x:TypeArguments="x:String">BookMarkName</mca:CSharpValue>
+                          </InArgument>
+                        </local:SetStepActivity.StepName>
+                        <local:SetStepActivity.StepStatus>
+                          <InArgument x:TypeArguments="x:Int16">
+                            <mca:CSharpValue x:TypeArguments="x:Int16">StepStatus</mca:CSharpValue>
+                          </InArgument>
+                        </local:SetStepActivity.StepStatus>
+                        <local:SetStepActivity.TempId>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <mca:CSharpValue x:TypeArguments="x:Int32">TempId</mca:CSharpValue>
+                          </InArgument>
+                        </local:SetStepActivity.TempId>
+                      </local:SetStepActivity>
+                      <local:Wait4InputDataCodeActivity x:TypeArguments="x:Int32" DisplayName="等待经理审批">
+                        <local:Wait4InputDataCodeActivity.BookMarkName>
+                          <InArgument x:TypeArguments="x:String">
+                            <mca:CSharpValue x:TypeArguments="x:String">BookMarkName</mca:CSharpValue>
+                          </InArgument>
+                        </local:Wait4InputDataCodeActivity.BookMarkName>
+                        <local:Wait4InputDataCodeActivity.Result>
+                          <OutArgument x:TypeArguments="x:Int32">
+                            <mca:CSharpReference x:TypeArguments="x:Int32">SupervisorIdResult</mca:CSharpReference>
+                          </OutArgument>
+                        </local:Wait4InputDataCodeActivity.Result>
+                      </local:Wait4InputDataCodeActivity>
+                    </Sequence>
+                  </State.Entry>
+                  <State.Exit>
+                    <Sequence>
+                      <Assign>
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int16">
+                            <mca:CSharpReference x:TypeArguments="x:Int16">StepStatus</mca:CSharpReference>
+                          </OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int16">
+                            <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WFStepEnum.Processed</mca:CSharpValue>
+                          </InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <local:SetStepActivity>
+                        <local:SetStepActivity.InPutValue>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <mca:CSharpValue x:TypeArguments="x:Int32">InputValue</mca:CSharpValue>
+                          </InArgument>
+                        </local:SetStepActivity.InPutValue>
+                        <local:SetStepActivity.IsEnd>
+                          <InArgument x:TypeArguments="x:Int16">
+                            <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WF_InstanceEnum.Processing</mca:CSharpValue>
+                          </InArgument>
+                        </local:SetStepActivity.IsEnd>
+                        <local:SetStepActivity.NextProcessBy>
+                          <InOutArgument x:TypeArguments="x:Int32">
+                            <mca:CSharpReference x:TypeArguments="x:Int32">NextProcessBy</mca:CSharpReference>
+                          </InOutArgument>
+                        </local:SetStepActivity.NextProcessBy>
+                        <local:SetStepActivity.StartBy>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <mca:CSharpValue x:TypeArguments="x:Int32">StartBy</mca:CSharpValue>
+                          </InArgument>
+                        </local:SetStepActivity.StartBy>
+                        <local:SetStepActivity.StepId>
+                          <InOutArgument x:TypeArguments="x:Int32">
+                            <mca:CSharpReference x:TypeArguments="x:Int32">StepId</mca:CSharpReference>
+                          </InOutArgument>
+                        </local:SetStepActivity.StepId>
+                        <local:SetStepActivity.StepName>
+                          <InArgument x:TypeArguments="x:String">
+                            <mca:CSharpValue x:TypeArguments="x:String">BookMarkName</mca:CSharpValue>
+                          </InArgument>
+                        </local:SetStepActivity.StepName>
+                        <local:SetStepActivity.StepStatus>
+                          <InArgument x:TypeArguments="x:Int16">
+                            <mca:CSharpValue x:TypeArguments="x:Int16">StepStatus</mca:CSharpValue>
+                          </InArgument>
+                        </local:SetStepActivity.StepStatus>
+                        <local:SetStepActivity.TempId>
+                          <InArgument x:TypeArguments="x:Int32">
+                            <mca:CSharpValue x:TypeArguments="x:Int32">TempId</mca:CSharpValue>
+                          </InArgument>
+                        </local:SetStepActivity.TempId>
+                      </local:SetStepActivity>
+                    </Sequence>
+                  </State.Exit>
+                  <State.Transitions>
+                    <Transition DisplayName="审批通过">
+                      <Transition.Condition>
+                        <mca:CSharpValue x:TypeArguments="x:Boolean">SupervisorIdResult==1</mca:CSharpValue>
+                      </Transition.Condition>
+                      <Transition.To>
+                        <State x:Name="__ReferenceID0" DisplayName="流程结束" IsFinal="True">
+                          <State.Entry>
+                            <Sequence>
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <mca:CSharpReference x:TypeArguments="x:String">BookMarkName</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">流程结束</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpReference x:TypeArguments="x:Int32">NextProcessBy</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpValue x:TypeArguments="x:Int32">StartBy</mca:CSharpValue>
+                                  </InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpReference x:TypeArguments="x:Int16">StepStatus</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WFStepEnum.Processed</mca:CSharpValue>
+                                  </InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <local:SetStepActivity>
+                                <local:SetStepActivity.InPutValue>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpValue x:TypeArguments="x:Int32">InputValue</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.InPutValue>
+                                <local:SetStepActivity.IsEnd>
+                                  <InArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WF_InstanceEnum.Processed</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.IsEnd>
+                                <local:SetStepActivity.NextProcessBy>
+                                  <InOutArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpReference x:TypeArguments="x:Int32">NextProcessBy</mca:CSharpReference>
+                                  </InOutArgument>
+                                </local:SetStepActivity.NextProcessBy>
+                                <local:SetStepActivity.StartBy>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpValue x:TypeArguments="x:Int32">StartBy</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.StartBy>
+                                <local:SetStepActivity.StepId>
+                                  <InOutArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpReference x:TypeArguments="x:Int32">StepId</mca:CSharpReference>
+                                  </InOutArgument>
+                                </local:SetStepActivity.StepId>
+                                <local:SetStepActivity.StepName>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">BookMarkName</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.StepName>
+                                <local:SetStepActivity.StepStatus>
+                                  <InArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpValue x:TypeArguments="x:Int16">StepStatus</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.StepStatus>
+                                <local:SetStepActivity.TempId>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpValue x:TypeArguments="x:Int32">TempId</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.TempId>
+                              </local:SetStepActivity>
+                            </Sequence>
+                          </State.Entry>
+                          <State.Variables>
+                            <Variable x:TypeArguments="x:String" Name="BookMarkName" />
+                            <Variable x:TypeArguments="x:Int16" Name="StepStatus" />
+                            <Variable x:TypeArguments="x:Int32" Name="NextProcessBy" />
+                            <Variable x:TypeArguments="x:Int32" Default="0" Name="StepId" />
+                          </State.Variables>
+                        </State>
+                      </Transition.To>
+                    </Transition>
+                    <Transition DisplayName="退回发起人1">
+                      <Transition.Condition>
+                        <mca:CSharpValue x:TypeArguments="x:Boolean">SupervisorIdResult==0</mca:CSharpValue>
+                      </Transition.Condition>
+                      <Transition.To>
+                        <State x:Name="__ReferenceID2" DisplayName="返回发起人">
+                          <State.Entry>
+                            <Sequence>
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <mca:CSharpReference x:TypeArguments="x:String">BookMarkName</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">返回发起人</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpReference x:TypeArguments="x:Int32">NextProcessBy</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpValue x:TypeArguments="x:Int32">StartBy</mca:CSharpValue>
+                                  </InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpReference x:TypeArguments="x:Int16">StepStatus</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WFStepEnum.UnProecess</mca:CSharpValue>
+                                  </InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <local:SetStepActivity>
+                                <local:SetStepActivity.InPutValue>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpValue x:TypeArguments="x:Int32">InputValue</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.InPutValue>
+                                <local:SetStepActivity.IsEnd>
+                                  <InArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WF_InstanceEnum.Processing</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.IsEnd>
+                                <local:SetStepActivity.NextProcessBy>
+                                  <InOutArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpReference x:TypeArguments="x:Int32">NextProcessBy</mca:CSharpReference>
+                                  </InOutArgument>
+                                </local:SetStepActivity.NextProcessBy>
+                                <local:SetStepActivity.StartBy>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpValue x:TypeArguments="x:Int32">StartBy</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.StartBy>
+                                <local:SetStepActivity.StepId>
+                                  <InOutArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpReference x:TypeArguments="x:Int32">StepId</mca:CSharpReference>
+                                  </InOutArgument>
+                                </local:SetStepActivity.StepId>
+                                <local:SetStepActivity.StepName>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">BookMarkName</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.StepName>
+                                <local:SetStepActivity.StepStatus>
+                                  <InArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpValue x:TypeArguments="x:Int16">StepStatus</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.StepStatus>
+                                <local:SetStepActivity.TempId>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpValue x:TypeArguments="x:Int32">TempId</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.TempId>
+                              </local:SetStepActivity>
+                              <local:Wait4InputDataCodeActivity x:TypeArguments="x:Int32" DisplayName="等待重新发起">
+                                <local:Wait4InputDataCodeActivity.BookMarkName>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">BookMarkName</mca:CSharpValue>
+                                  </InArgument>
+                                </local:Wait4InputDataCodeActivity.BookMarkName>
+                                <local:Wait4InputDataCodeActivity.Result>
+                                  <OutArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpReference x:TypeArguments="x:Int32">StartIdResult</mca:CSharpReference>
+                                  </OutArgument>
+                                </local:Wait4InputDataCodeActivity.Result>
+                              </local:Wait4InputDataCodeActivity>
+                            </Sequence>
+                          </State.Entry>
+                          <State.Exit>
+                            <Sequence>
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpReference x:TypeArguments="x:Int16">StepStatus</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WFStepEnum.Processed</mca:CSharpValue>
+                                  </InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <local:SetStepActivity>
+                                <local:SetStepActivity.InPutValue>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpValue x:TypeArguments="x:Int32">InputValue</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.InPutValue>
+                                <local:SetStepActivity.IsEnd>
+                                  <InArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WF_InstanceEnum.Processing</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.IsEnd>
+                                <local:SetStepActivity.NextProcessBy>
+                                  <InOutArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpReference x:TypeArguments="x:Int32">NextProcessBy</mca:CSharpReference>
+                                  </InOutArgument>
+                                </local:SetStepActivity.NextProcessBy>
+                                <local:SetStepActivity.StartBy>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpValue x:TypeArguments="x:Int32">StartBy</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.StartBy>
+                                <local:SetStepActivity.StepId>
+                                  <InOutArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpReference x:TypeArguments="x:Int32">StepId</mca:CSharpReference>
+                                  </InOutArgument>
+                                </local:SetStepActivity.StepId>
+                                <local:SetStepActivity.StepName>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">BookMarkName</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.StepName>
+                                <local:SetStepActivity.StepStatus>
+                                  <InArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpValue x:TypeArguments="x:Int16">StepStatus</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.StepStatus>
+                                <local:SetStepActivity.TempId>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpValue x:TypeArguments="x:Int32">TempId</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.TempId>
+                              </local:SetStepActivity>
+                            </Sequence>
+                          </State.Exit>
+                          <State.Transitions>
+                            <Transition DisplayName="发起人结束流程" To="{x:Reference __ReferenceID0}">
+                              <Transition.Condition>
+                                <mca:CSharpValue x:TypeArguments="x:Boolean">StartIdResult==0</mca:CSharpValue>
+                              </Transition.Condition>
+                            </Transition>
+                            <Transition DisplayName="重新提交" To="{x:Reference __ReferenceID1}">
+                              <Transition.Condition>
+                                <mca:CSharpValue x:TypeArguments="x:Boolean">StartIdResult==1</mca:CSharpValue>
+                              </Transition.Condition>
+                            </Transition>
+                          </State.Transitions>
+                          <State.Variables>
+                            <Variable x:TypeArguments="x:String" Name="BookMarkName" />
+                            <Variable x:TypeArguments="x:Int32" Name="NextProcessBy" />
+                            <Variable x:TypeArguments="x:Int16" Name="StepStatus" />
+                            <Variable x:TypeArguments="x:Int32" Default="0" Name="StepId" />
+                          </State.Variables>
+                        </State>
+                      </Transition.To>
+                    </Transition>
+                  </State.Transitions>
+                  <State.Variables>
+                    <Variable x:TypeArguments="x:Int32" Name="NextProcessBy" />
+                    <Variable x:TypeArguments="x:String" Name="BookMarkName" />
+                    <Variable x:TypeArguments="x:Int16" Name="StepStatus" />
+                    <Variable x:TypeArguments="x:Int32" Default="0" Name="StepId" />
+                  </State.Variables>
+                </State>
+              </Transition.To>
+            </Transition>
+            <Transition DisplayName="输入大于设定值">
+              <Transition.Condition>
+                <mca:CSharpValue x:TypeArguments="x:Boolean">InputValue&gt;SetUpValue</mca:CSharpValue>
+              </Transition.Condition>
+              <Transition.To>
+                <State x:Name="__ReferenceID5" DisplayName="财务与经理审批">
+                  <State.Entry>
+                    <Parallel>
+                      <Sequence DisplayName="财务审批流程">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="BookMarkName" />
+                          <Variable x:TypeArguments="x:Int32" Name="NextProcessBy" />
+                          <Variable x:TypeArguments="x:Int16" Name="StepStatus" />
+                          <Variable x:TypeArguments="x:Int32" Default="0" Name="StepId" />
+                        </Sequence.Variables>
+                        <Sequence DisplayName="等待财务审批流程">
+                          <Assign>
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">
+                                <mca:CSharpReference x:TypeArguments="x:String">BookMarkName</mca:CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">财务审批</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign>
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int16">
+                                <mca:CSharpReference x:TypeArguments="x:Int16">StepStatus</mca:CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int16">
+                                <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WFStepEnum.UnProecess</mca:CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign>
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpReference x:TypeArguments="x:Int32">NextProcessBy</mca:CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpValue x:TypeArguments="x:Int32">FinacialId</mca:CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <local:SetStepActivity>
+                            <local:SetStepActivity.InPutValue>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpValue x:TypeArguments="x:Int32">InputValue</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.InPutValue>
+                            <local:SetStepActivity.IsEnd>
+                              <InArgument x:TypeArguments="x:Int16">
+                                <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WF_InstanceEnum.Processing</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.IsEnd>
+                            <local:SetStepActivity.NextProcessBy>
+                              <InOutArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpReference x:TypeArguments="x:Int32">NextProcessBy</mca:CSharpReference>
+                              </InOutArgument>
+                            </local:SetStepActivity.NextProcessBy>
+                            <local:SetStepActivity.StartBy>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpValue x:TypeArguments="x:Int32">StartBy</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.StartBy>
+                            <local:SetStepActivity.StepId>
+                              <InOutArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpReference x:TypeArguments="x:Int32">StepId</mca:CSharpReference>
+                              </InOutArgument>
+                            </local:SetStepActivity.StepId>
+                            <local:SetStepActivity.StepName>
+                              <InArgument x:TypeArguments="x:String">
+                                <mca:CSharpValue x:TypeArguments="x:String">BookMarkName</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.StepName>
+                            <local:SetStepActivity.StepStatus>
+                              <InArgument x:TypeArguments="x:Int16">
+                                <mca:CSharpValue x:TypeArguments="x:Int16">StepStatus</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.StepStatus>
+                            <local:SetStepActivity.TempId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpValue x:TypeArguments="x:Int32">TempId</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.TempId>
+                          </local:SetStepActivity>
+                          <local:Wait4InputDataCodeActivity x:TypeArguments="x:Int32" DisplayName="等待财务审批">
+                            <local:Wait4InputDataCodeActivity.BookMarkName>
+                              <InArgument x:TypeArguments="x:String">
+                                <mca:CSharpValue x:TypeArguments="x:String">BookMarkName</mca:CSharpValue>
+                              </InArgument>
+                            </local:Wait4InputDataCodeActivity.BookMarkName>
+                            <local:Wait4InputDataCodeActivity.Result>
+                              <OutArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpReference x:TypeArguments="x:Int32">FinacialIdResult</mca:CSharpReference>
+                              </OutArgument>
+                            </local:Wait4InputDataCodeActivity.Result>
+                          </local:Wait4InputDataCodeActivity>
+                        </Sequence>
+                        <Sequence DisplayName="财务审批结束">
+                          <Assign>
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int16">
+                                <mca:CSharpReference x:TypeArguments="x:Int16">StepStatus</mca:CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int16">
+                                <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WFStepEnum.Processed</mca:CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <local:SetStepActivity>
+                            <local:SetStepActivity.InPutValue>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpValue x:TypeArguments="x:Int32">InputValue</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.InPutValue>
+                            <local:SetStepActivity.IsEnd>
+                              <InArgument x:TypeArguments="x:Int16">
+                                <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WF_InstanceEnum.Processing</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.IsEnd>
+                            <local:SetStepActivity.NextProcessBy>
+                              <InOutArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpReference x:TypeArguments="x:Int32">NextProcessBy</mca:CSharpReference>
+                              </InOutArgument>
+                            </local:SetStepActivity.NextProcessBy>
+                            <local:SetStepActivity.StartBy>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpValue x:TypeArguments="x:Int32">StartBy</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.StartBy>
+                            <local:SetStepActivity.StepId>
+                              <InOutArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpReference x:TypeArguments="x:Int32">StepId</mca:CSharpReference>
+                              </InOutArgument>
+                            </local:SetStepActivity.StepId>
+                            <local:SetStepActivity.StepName>
+                              <InArgument x:TypeArguments="x:String">
+                                <mca:CSharpValue x:TypeArguments="x:String">BookMarkName</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.StepName>
+                            <local:SetStepActivity.StepStatus>
+                              <InArgument x:TypeArguments="x:Int16">
+                                <mca:CSharpValue x:TypeArguments="x:Int16">StepStatus</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.StepStatus>
+                            <local:SetStepActivity.TempId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpValue x:TypeArguments="x:Int32">TempId</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.TempId>
+                          </local:SetStepActivity>
+                        </Sequence>
+                      </Sequence>
+                      <Sequence DisplayName="经理审批流程">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:String" Name="BookMarkName" />
+                          <Variable x:TypeArguments="x:Int16" Name="StepStatus" />
+                          <Variable x:TypeArguments="x:Int32" Name="NextProcessBy" />
+                          <Variable x:TypeArguments="x:Int32" Default="0" Name="StepId" />
+                        </Sequence.Variables>
+                        <Sequence DisplayName="等待经理审批流程">
+                          <Assign>
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">
+                                <mca:CSharpReference x:TypeArguments="x:String">BookMarkName</mca:CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String">项目经理审批2</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign>
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int16">
+                                <mca:CSharpReference x:TypeArguments="x:Int16">StepStatus</mca:CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int16">
+                                <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WFStepEnum.UnProecess</mca:CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <Assign>
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpReference x:TypeArguments="x:Int32">NextProcessBy</mca:CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpValue x:TypeArguments="x:Int32">SupervisorId</mca:CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <local:SetStepActivity>
+                            <local:SetStepActivity.InPutValue>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpValue x:TypeArguments="x:Int32">InputValue</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.InPutValue>
+                            <local:SetStepActivity.IsEnd>
+                              <InArgument x:TypeArguments="x:Int16">
+                                <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WF_InstanceEnum.Processing</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.IsEnd>
+                            <local:SetStepActivity.NextProcessBy>
+                              <InOutArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpReference x:TypeArguments="x:Int32">NextProcessBy</mca:CSharpReference>
+                              </InOutArgument>
+                            </local:SetStepActivity.NextProcessBy>
+                            <local:SetStepActivity.StartBy>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpValue x:TypeArguments="x:Int32">StartBy</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.StartBy>
+                            <local:SetStepActivity.StepId>
+                              <InOutArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpReference x:TypeArguments="x:Int32">StepId</mca:CSharpReference>
+                              </InOutArgument>
+                            </local:SetStepActivity.StepId>
+                            <local:SetStepActivity.StepName>
+                              <InArgument x:TypeArguments="x:String">
+                                <mca:CSharpValue x:TypeArguments="x:String">BookMarkName</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.StepName>
+                            <local:SetStepActivity.StepStatus>
+                              <InArgument x:TypeArguments="x:Int16">
+                                <mca:CSharpValue x:TypeArguments="x:Int16">StepStatus</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.StepStatus>
+                            <local:SetStepActivity.TempId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpValue x:TypeArguments="x:Int32">TempId</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.TempId>
+                          </local:SetStepActivity>
+                          <local:Wait4InputDataCodeActivity x:TypeArguments="x:Int32" DisplayName="等待经理审批">
+                            <local:Wait4InputDataCodeActivity.BookMarkName>
+                              <InArgument x:TypeArguments="x:String">
+                                <mca:CSharpValue x:TypeArguments="x:String">BookMarkName</mca:CSharpValue>
+                              </InArgument>
+                            </local:Wait4InputDataCodeActivity.BookMarkName>
+                            <local:Wait4InputDataCodeActivity.Result>
+                              <OutArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpReference x:TypeArguments="x:Int32">SupervisorIdResult</mca:CSharpReference>
+                              </OutArgument>
+                            </local:Wait4InputDataCodeActivity.Result>
+                          </local:Wait4InputDataCodeActivity>
+                        </Sequence>
+                        <Sequence DisplayName="经理审批结束">
+                          <Assign>
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int16">
+                                <mca:CSharpReference x:TypeArguments="x:Int16">StepStatus</mca:CSharpReference>
+                              </OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int16">
+                                <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WFStepEnum.Processed</mca:CSharpValue>
+                              </InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <local:SetStepActivity>
+                            <local:SetStepActivity.InPutValue>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpValue x:TypeArguments="x:Int32">InputValue</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.InPutValue>
+                            <local:SetStepActivity.IsEnd>
+                              <InArgument x:TypeArguments="x:Int16">
+                                <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WF_InstanceEnum.Processing</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.IsEnd>
+                            <local:SetStepActivity.NextProcessBy>
+                              <InOutArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpReference x:TypeArguments="x:Int32">NextProcessBy</mca:CSharpReference>
+                              </InOutArgument>
+                            </local:SetStepActivity.NextProcessBy>
+                            <local:SetStepActivity.StartBy>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpValue x:TypeArguments="x:Int32">StartBy</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.StartBy>
+                            <local:SetStepActivity.StepId>
+                              <InOutArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpReference x:TypeArguments="x:Int32">StepId</mca:CSharpReference>
+                              </InOutArgument>
+                            </local:SetStepActivity.StepId>
+                            <local:SetStepActivity.StepName>
+                              <InArgument x:TypeArguments="x:String">
+                                <mca:CSharpValue x:TypeArguments="x:String">BookMarkName</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.StepName>
+                            <local:SetStepActivity.StepStatus>
+                              <InArgument x:TypeArguments="x:Int16">
+                                <mca:CSharpValue x:TypeArguments="x:Int16">StepStatus</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.StepStatus>
+                            <local:SetStepActivity.TempId>
+                              <InArgument x:TypeArguments="x:Int32">
+                                <mca:CSharpValue x:TypeArguments="x:Int32">TempId</mca:CSharpValue>
+                              </InArgument>
+                            </local:SetStepActivity.TempId>
+                          </local:SetStepActivity>
+                        </Sequence>
+                      </Sequence>
+                    </Parallel>
+                  </State.Entry>
+                  <State.Transitions>
+                    <Transition DisplayName="经理与财务通过">
+                      <Transition.Condition>
+                        <mca:CSharpValue x:TypeArguments="x:Boolean">FinacialIdResult == 1 &amp;&amp; SupervisorIdResult==1</mca:CSharpValue>
+                      </Transition.Condition>
+                      <Transition.To>
+                        <State x:Name="__ReferenceID4" DisplayName="总经理审批">
+                          <State.Entry>
+                            <Sequence>
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">
+                                    <mca:CSharpReference x:TypeArguments="x:String">BookMarkName</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">总经理审批</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpReference x:TypeArguments="x:Int32">NextProcessBy</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpValue x:TypeArguments="x:Int32">ManagerId</mca:CSharpValue>
+                                  </InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpReference x:TypeArguments="x:Int16">StepStatus</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WFStepEnum.UnProecess</mca:CSharpValue>
+                                  </InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <local:SetStepActivity>
+                                <local:SetStepActivity.InPutValue>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpValue x:TypeArguments="x:Int32">InputValue</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.InPutValue>
+                                <local:SetStepActivity.IsEnd>
+                                  <InArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WF_InstanceEnum.Processing</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.IsEnd>
+                                <local:SetStepActivity.NextProcessBy>
+                                  <InOutArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpReference x:TypeArguments="x:Int32">NextProcessBy</mca:CSharpReference>
+                                  </InOutArgument>
+                                </local:SetStepActivity.NextProcessBy>
+                                <local:SetStepActivity.StartBy>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpValue x:TypeArguments="x:Int32">StartBy</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.StartBy>
+                                <local:SetStepActivity.StepId>
+                                  <InOutArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpReference x:TypeArguments="x:Int32">StepId</mca:CSharpReference>
+                                  </InOutArgument>
+                                </local:SetStepActivity.StepId>
+                                <local:SetStepActivity.StepName>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">BookMarkName</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.StepName>
+                                <local:SetStepActivity.StepStatus>
+                                  <InArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpValue x:TypeArguments="x:Int16">StepStatus</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.StepStatus>
+                                <local:SetStepActivity.TempId>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpValue x:TypeArguments="x:Int32">TempId</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.TempId>
+                              </local:SetStepActivity>
+                              <local:Wait4InputDataCodeActivity x:TypeArguments="x:Int32" DisplayName="等待经理审批">
+                                <local:Wait4InputDataCodeActivity.BookMarkName>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">BookMarkName</mca:CSharpValue>
+                                  </InArgument>
+                                </local:Wait4InputDataCodeActivity.BookMarkName>
+                                <local:Wait4InputDataCodeActivity.Result>
+                                  <OutArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpReference x:TypeArguments="x:Int32">ManagerId</mca:CSharpReference>
+                                  </OutArgument>
+                                </local:Wait4InputDataCodeActivity.Result>
+                              </local:Wait4InputDataCodeActivity>
+                            </Sequence>
+                          </State.Entry>
+                          <State.Exit>
+                            <Sequence>
+                              <Assign>
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpReference x:TypeArguments="x:Int16">StepStatus</mca:CSharpReference>
+                                  </OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WFStepEnum.Processed</mca:CSharpValue>
+                                  </InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <local:SetStepActivity>
+                                <local:SetStepActivity.InPutValue>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpValue x:TypeArguments="x:Int32">InputValue</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.InPutValue>
+                                <local:SetStepActivity.IsEnd>
+                                  <InArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpValue x:TypeArguments="x:Int16">(short)SimpleOA.Enum.WF_InstanceEnum.Processing</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.IsEnd>
+                                <local:SetStepActivity.NextProcessBy>
+                                  <InOutArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpReference x:TypeArguments="x:Int32">NextProcessBy</mca:CSharpReference>
+                                  </InOutArgument>
+                                </local:SetStepActivity.NextProcessBy>
+                                <local:SetStepActivity.StartBy>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpValue x:TypeArguments="x:Int32">StartBy</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.StartBy>
+                                <local:SetStepActivity.StepId>
+                                  <InOutArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpReference x:TypeArguments="x:Int32">StepId</mca:CSharpReference>
+                                  </InOutArgument>
+                                </local:SetStepActivity.StepId>
+                                <local:SetStepActivity.StepName>
+                                  <InArgument x:TypeArguments="x:String">
+                                    <mca:CSharpValue x:TypeArguments="x:String">BookMarkName</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.StepName>
+                                <local:SetStepActivity.StepStatus>
+                                  <InArgument x:TypeArguments="x:Int16">
+                                    <mca:CSharpValue x:TypeArguments="x:Int16">StepStatus</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.StepStatus>
+                                <local:SetStepActivity.TempId>
+                                  <InArgument x:TypeArguments="x:Int32">
+                                    <mca:CSharpValue x:TypeArguments="x:Int32">TempId</mca:CSharpValue>
+                                  </InArgument>
+                                </local:SetStepActivity.TempId>
+                              </local:SetStepActivity>
+                            </Sequence>
+                          </State.Exit>
+                          <State.Transitions>
+                            <Transition DisplayName="审批通过" To="{x:Reference __ReferenceID0}">
+                              <Transition.Condition>
+                                <mca:CSharpValue x:TypeArguments="x:Boolean">ManagerIdResult==1</mca:CSharpValue>
+                              </Transition.Condition>
+                            </Transition>
+                            <Transition DisplayName="退回发起人3" To="{x:Reference __ReferenceID2}">
+                              <Transition.Condition>
+                                <mca:CSharpValue x:TypeArguments="x:Boolean">ManagerIdResult==0</mca:CSharpValue>
+                              </Transition.Condition>
+                            </Transition>
+                          </State.Transitions>
+                          <State.Variables>
+                            <Variable x:TypeArguments="x:String" Name="BookMarkName" />
+                            <Variable x:TypeArguments="x:Int32" Name="NextProcessBy" />
+                            <Variable x:TypeArguments="x:Int16" Name="StepStatus" />
+                            <Variable x:TypeArguments="x:Int32" Default="0" Name="StepId" />
+                          </State.Variables>
+                        </State>
+                      </Transition.To>
+                    </Transition>
+                    <Transition DisplayName="退回发起人2" To="{x:Reference __ReferenceID2}">
+                      <Transition.Condition>
+                        <mca:CSharpValue x:TypeArguments="x:Boolean">SupervisorIdResult==0 || FinacialIdResult==0</mca:CSharpValue>
+                      </Transition.Condition>
+                    </Transition>
+                  </State.Transitions>
+                </State>
+              </Transition.To>
+            </Transition>
+          </State.Transitions>
+          <State.Variables>
+            <Variable x:TypeArguments="x:Int32" Name="NextProcessBy" />
+            <Variable x:TypeArguments="x:String" Name="BookMarkName" />
+            <Variable x:TypeArguments="x:Int16" Name="StepStatus" />
+            <Variable x:TypeArguments="x:Int32" Default="0" Name="StepId" />
+          </State.Variables>
+        </State>
+      </StateMachine.InitialState>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID3</x:Reference>
+      <x:Reference>__ReferenceID0</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+      <x:Reference>__ReferenceID4</x:Reference>
+      <x:Reference>__ReferenceID5</x:Reference>
+      <StateMachine.Variables>
+        <Variable x:TypeArguments="x:Int32" Name="StartIdResult" />
+        <Variable x:TypeArguments="x:Int32" Name="ManagerIdResult" />
+        <Variable x:TypeArguments="x:Int32" Name="SupervisorIdResult" />
+        <Variable x:TypeArguments="x:Int32" Name="FinacialIdResult" />
+      </StateMachine.Variables>
+      <sads:DebugSymbol.Symbol>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</sads:DebugSymbol.Symbol>
+    </StateMachine>
+  </local:Activity1.Implementation>
+</local:Activity1>

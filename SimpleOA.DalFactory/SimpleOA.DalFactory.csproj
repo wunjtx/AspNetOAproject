@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E3AA5B88-1F7A-46ED-84BB-6352DAC18ED0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimpleOA.DalFactory</RootNamespace>
+    <AssemblyName>SimpleOA.DalFactory</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DalFactory.cs" />
+    <Compile Include="DbSession.cs" />
+    <Compile Include="DbSessionFactory.cs" />
+    <Compile Include="IDbSession.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SimpleOA.EFDAL\SimpleOA.OADAL.csproj">
+      <Project>{f26eb706-cc00-4626-9def-95f195c43643}</Project>
+      <Name>SimpleOA.OADAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleOA.ErpDal\SimpleOA.ErpDal.csproj">
+      <Project>{f128c531-b230-42fa-bd42-8072764db773}</Project>
+      <Name>SimpleOA.ErpDal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleOA.IBaseDAL\SimpleOA.IBaseDAL.csproj">
+      <Project>{238DBDB9-F4BF-466F-81F5-F63B7BA72060}</Project>
+      <Name>SimpleOA.IBaseDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleOA.IDAL\SimpleOA.IOADAL.csproj">
+      <Project>{2c2c88e4-bdc6-4860-b89c-6e2af72b89dc}</Project>
+      <Name>SimpleOA.IOADAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleOA.IErpDAL\SimpleOA.IErpDAL.csproj">
+      <Project>{B6106968-0223-4EAE-BC69-5C7513477F12}</Project>
+      <Name>SimpleOA.IErpDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleOA.Model\SimpleOA.Model.csproj">
+      <Project>{7ba6d03b-5da7-466b-aafd-f30103352238}</Project>
+      <Name>SimpleOA.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

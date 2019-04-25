@@ -1,0 +1,149 @@
+﻿@{
+    ViewBag.Title = "Form/TextBox";
+    var F = Html.F();
+}
+
+
+@section body{
+
+    @(F.Grid()
+        .IsFluid(true)
+        .CssClass("blockpanel")
+        .EnableCheckBoxSelect(true)
+        .ShowHeader(true)
+        .ShowBorder(true)
+        .Title("表格（跨页选中行）")
+        .ID("Grid1")
+        .DataIDField("Id")
+        .DataTextField("Url")
+        .AllowPaging(true)
+        .PageSize(5)
+        .IsDatabasePaging(true)
+        .OnPageIndexChanged(Url.Action("Grid1_PageIndexChanged"), "Grid1", new Parameter[] { new Parameter("SearchQm", ViewBag.qm, ParameterMode.String) })
+        .KeepCurrentSelection(true)
+        .ClearSelectionBeforePaging(false)
+        .KeepPagedSelection(true)
+        .Columns(
+            F.RowNumberField(),
+            F.RenderField()
+                .HeaderText("请求控制器")
+                .DataField("Controller")
+                .FieldType(FieldType.String)
+                .Width(120),
+            F.RenderField()
+                .HeaderText("请求函数")
+                .DataField("Action")
+                .FieldType(FieldType.String)
+                .Width(120),
+            F.RenderField()
+                .HeaderText("名称")
+                .DataField("Name")
+                .FieldType(FieldType.String)
+                .Width(150),
+            F.RenderField()
+                .HeaderText("Url")
+                .DataField("Url")
+                .FieldType(FieldType.String)
+                .Width(100),
+            F.RenderField()
+                .HeaderText("请求类型")
+                .DataField("HttpMethod")
+                .FieldType(FieldType.String)
+                .Width(100),
+            F.RenderField()
+                .HeaderText("备注")
+                .DataField("Remark")
+                .FieldType(FieldType.String)
+                .Width(100),
+            F.RenderField()
+                .HeaderText("窗口列")
+                .Width(80)
+                .RendererFunction("renderWindowField1"))
+        .RecordCount(ViewBag.Grid1RecordCount)
+        .DataSource(ViewBag.Grid1DataSource)
+)
+
+}
+
+@(F.Window().Hidden(true).Height(450).Width(850).IsModal(true).OnClose(Url.Action("Window1_Close")).Target(Target.Self).EnableResize(true).EnableMaximize(true).EnableIFrame(true).Title("详细信息").ID("Window1"))
+
+<br>
+
+@section script {
+
+    <script src="~/res/js/grid.js"></script>
+
+    <script>
+    // 缓存的行数据
+    var cachedRows = {};
+
+    // 缓存当前页选中行的数据
+    function cacheCurrentPage() {
+        $.each(F.ui.Grid1.getSelectedRows(true), function (index, item) {
+            var rowId = item.id;
+            if (!cachedRows[rowId]) {
+                cachedRows[rowId] = item;
+            }
+        });
+    }
+
+    function OnGrid1BeforePaging(event, pageIndex) {
+        // 缓存当前页选中行数据
+        cacheCurrentPage();
+    }
+
+    function renderWindowField1(value, params) {
+        return '<a href="javascript:;" class="mywindowfield">编辑</a>';
+    }
+
+    // 打开窗体
+    function openWindow(Id, name) {
+
+        var iframeWindowUrl = '@Url.Content("/Action/Detail")';
+        var iframeUrl = iframeWindowUrl + '?Id=' + Id ;
+
+        // 显示窗体
+        F.ui.Window1.show(iframeUrl, '详细信息 - ' + name);
+    }
+
+
+    function onApproveClick(event) {
+        var grid = F.ui.Grid1;
+
+        if (!grid.hasSelection()) {
+            F.alert('请至少选择一项！');
+            return;
+        }
+
+        var selectedRows = grid.getSelectedRows(true);
+
+        // DataIDField
+        var selectedRowIds = $.map(selectedRows, function (item, index) {
+            return item.id;
+        }).join(',');
+
+        // DataTextField
+        var selectedRowTexts = $.map(selectedRows, function (item, index) {
+            return item.text;
+        }).join(',');
+
+        openWindow(selectedRowIds, selectedRowTexts);
+    }
+
+
+    F.ready(function () {
+
+        var grid = F.ui.Grid1;
+
+        // 点击表格行中的编辑按钮
+        grid.el.on('click', 'a.mywindowfield', function (event) {
+            var rowEl = $(this).closest('.f-grid-row');
+            var rowData = grid.getRowData(rowEl);
+
+            openWindow(rowData.id, rowData.text);
+        });
+    });
+
+    </script>
+
+}
